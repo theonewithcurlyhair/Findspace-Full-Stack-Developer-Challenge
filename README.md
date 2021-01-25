@@ -1,4 +1,4 @@
-# Findspace-Full-Stack-Developer-Challenge
+# Findspace-Full-Stack-Developer-Challenge by Nikita Mieshalnykov
 
 ## Docs
 
