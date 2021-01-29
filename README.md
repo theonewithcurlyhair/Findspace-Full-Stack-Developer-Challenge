@@ -1,5 +1,5 @@
 # Findspace-Full-Stack-Developer-Challenge by Nikita Mieshalnykov
-
+Fixed Bugs
 ## Docs
 
 ### Install Docker
