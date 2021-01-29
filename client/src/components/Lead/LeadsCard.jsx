@@ -12,6 +12,7 @@ import CardActions from '@material-ui/core/CardActions';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -93,6 +94,26 @@ function LeadsCard(props) {
 								"Contacted: Yes"
 								:
 								'Contacted: No'
+							}
+						</Typography>
+						<Typography  
+							variant="body2" 
+							component="p"
+							gutterBottom>
+							{ 
+							!!lead.created_at
+							&&
+								` Created ${formatDistanceToNow(new Date (Date.parse(lead.created_at)))} ago`
+							}
+						</Typography>
+						<Typography  
+							variant="body2" 
+							component="p"
+							gutterBottom>
+							{ 
+							!!lead.updated_at 
+							&&
+								` Updated ${formatDistanceToNow(new Date (Date.parse(lead.updated_at)))} ago`
 							}
 						</Typography>
 					</CardContent>

@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import mimetypes
+
+mimetypes.add_type('text/javascript', ext=".js", strict=False)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +28,7 @@ SECRET_KEY = '5l#1sf!k*$e(apb*mtlmc6k4n3ywf#n()*cdk=^+x@wk=xa^*-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -122,13 +124,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "../client/build/static"),
+    os.path.join(BASE_DIR, '../', 'client', 'build', "static"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
-ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
